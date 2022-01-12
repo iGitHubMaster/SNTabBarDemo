@@ -149,7 +149,7 @@ static CGFloat indicatorR = 28.0;
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathMoveToPoint(path, NULL, _selectionIndicator.position.x, _selectionIndicator.position.y);
     // 圆弧运动
-    CGFloat cPX = fabs(itemCenterX - _selectionIndicator.position.x)/2.0 + _selectionIndicator.position.x;
+    CGFloat cPX = fabs(itemCenterX - _selectionIndicator.position.x)/2.0 + (_selectionIndicator.position.x > itemCenterX ? itemCenterX : _selectionIndicator.position.x);
     CGPathAddQuadCurveToPoint(path, NULL, cPX, -80, itemCenterX, 0);
     CGPathAddLineToPoint(path, NULL, itemCenterX, 25);
     CGPathAddLineToPoint(path, NULL, itemCenterX, 0);
